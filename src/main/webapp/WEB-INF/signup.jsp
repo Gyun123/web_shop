@@ -124,7 +124,7 @@
                     toastr.warning('两次输入的密码不同!')
                     createCaptcha()
                 } else {
-                    if ($('#input-captcha').val().toUpperCase() === captcha.toUpperCase()) {
+                    //if ($('#input-captcha').val().toUpperCase() === captcha.toUpperCase()) {
                         $.post('${pageContext.request.contextPath}/signup.user', $('#signup-form').serialize(),
                             function (msg, status) {
                                 if (status === 'success') {
@@ -139,12 +139,12 @@
                                     createCaptcha()
                                 }
                             })
-                    } else if ($('#input-captcha').val() === '') {
-                        toastr.warning('请输入验证码!')
-                    } else {
-                        toastr.error('验证码错误!')
-                        createCaptcha()
-                    }
+                    // } else if ($('#input-captcha').val() === '') {
+                    //     toastr.warning('请输入验证码!')
+                    // } else {
+                    //     toastr.error('验证码错误!')
+                    //     createCaptcha()
+                    // }
                 }
             })
         })
